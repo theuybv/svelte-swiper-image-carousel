@@ -8,24 +8,36 @@
     const demoOptions: CarouselOptions[] = [
         {
             ...defaultCarouselOptions,
-            imageAspectRatio:"aspect-[1/1]",
-            images: getDemoImages(10, "aspect-[4/3]"),
+            imageAspectRatio: "aspect-[1/1]",
+            sourceImageAspectRatio: "aspect-[4/3]",
+            get images() {
+                return getDemoImages(10, this.sourceImageAspectRatio)
+            },
             thumbAspectRatio: "aspect-[1/1]"
         },
         {
             ...defaultCarouselOptions,
-            images: getDemoImages(10, "aspect-[3/2]"),
+            sourceImageAspectRatio: "aspect-[3/2]",
+            get images() {
+                return getDemoImages(10, this.sourceImageAspectRatio)
+            },
             imageAspectRatio: "aspect-[3/2]",
             thumbsPerView: 6
         },
         {
             ...defaultCarouselOptions,
-            images: getDemoImages(4, "aspect-[4/3]"),
+            sourceImageAspectRatio: "aspect-[4/3]",
+            get images() {
+                return getDemoImages(10, this.sourceImageAspectRatio)
+            },
             thumbsPerView: 5
         },
         {
             ...defaultCarouselOptions,
-            images: getDemoImages(8, "aspect-[3/2]"),
+            sourceImageAspectRatio: "aspect-[3/2]",
+            get images() {
+                return getDemoImages(10, this.sourceImageAspectRatio)
+            },
             thumbsPerView: 4,
             thumbAspectRatio: "aspect-[3/2]"
         }

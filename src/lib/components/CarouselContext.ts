@@ -7,11 +7,13 @@ export type CarouselOptions = {
     imageAspectRatio: AspectRatio,
     maxImageHeight: number
     thumbsPerView: number
+    sourceImageAspectRatio: AspectRatio
 }
 export const defaultCarouselOptions: CarouselOptions = {
     imageAspectRatio: "aspect-[3/2]",
     maxImageHeight: 500,
     images: [],
     thumbAspectRatio: "aspect-[4/3]",
-    thumbsPerView: 3
+    thumbsPerView: 3,
+    sourceImageAspectRatio: "aspect-[3/2]"
 }
