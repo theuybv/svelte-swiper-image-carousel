@@ -3,7 +3,7 @@
     import SlideImage from '$lib/components/SlideImage.svelte';
     import {getContext} from "svelte";
     import {CarouselContextKey, CarouselCurrentIndexKey, type CarouselOptions} from "./CarouselContext";
-    import {EffectFade} from "swiper";
+    import {Autoplay, EffectFade, Pagination} from "swiper";
     import {type Writable} from "svelte/store";
 
     export let containerWidth = 0
@@ -29,9 +29,17 @@
     $: if ($currentIndex && swiperInstance) {
         swiperInstance.slideTo($currentIndex)
     }
+    let autoPlayOptions = options.autoPlay ?
+        {disableOnInteraction: false, delay: options.autoPlay.delay}
+        : false
 </script>
 <Swiper
-        modules={[EffectFade]}
+        autoplay={autoPlayOptions}
+        pagination={{
+        clickable: true,
+      }}
+        navigation={true}
+        modules={[EffectFade, Autoplay, Pagination]}
         effect="fade"
         slidesPerView={1}
         on:slideChange={onSlideChange}

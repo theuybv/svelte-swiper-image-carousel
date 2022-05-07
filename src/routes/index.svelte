@@ -10,10 +10,14 @@
             ...defaultCarouselOptions,
             imageAspectRatio: "aspect-[1/1]",
             sourceImageAspectRatio: "aspect-[4/3]",
+            thumbsPerView: 3,
             get images() {
                 return getDemoImages(10, this.sourceImageAspectRatio)
             },
-            thumbAspectRatio: "aspect-[1/1]"
+            thumbAspectRatio: "aspect-[1/1]",
+            autoPlay: {
+                delay: 3000
+            }
         },
         {
             ...defaultCarouselOptions,
@@ -22,7 +26,7 @@
                 return getDemoImages(10, this.sourceImageAspectRatio)
             },
             imageAspectRatio: "aspect-[3/2]",
-            thumbsPerView: 6
+            thumbsPerView: 2
         },
         {
             ...defaultCarouselOptions,
@@ -55,7 +59,7 @@
                         {#each Object.keys(options) as optionKey}
                             <li>
                                 {#if optionKey !== 'images'}
-                                    <strong>{optionKey}</strong>:{options[optionKey]}
+                                    <strong>{optionKey}</strong>: {JSON.stringify(options[optionKey])}
                                 {/if}
                             </li>
                         {/each}

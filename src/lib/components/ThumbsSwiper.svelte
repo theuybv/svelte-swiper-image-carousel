@@ -63,7 +63,7 @@
         on:swiper={onSwiper}
         on:slideChange={onSlideChange}>
     <div slot="container-start" class="pointer-events-none absolute z-10 w-full h-full">
-        <div class="flex items-center w-full h-full justify-between px-2">
+        <div class="flex items-center w-full h-full justify-between px-2 -mt-0.5">
             <div class={`pointer-events-auto thumbs-prev bg-white rounded-full ${disableNextClass}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor" stroke-width="2">

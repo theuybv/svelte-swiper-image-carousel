@@ -1,7 +1,8 @@
 <script lang="ts">
     import 'swiper/css';
     import 'swiper/css/effect-fade';
-    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+    import './swiper.override.css'
 
     import MainSwiper from './MainSwiper.svelte';
     import ThumbsSwiper from './ThumbsSwiper.svelte';
